@@ -1,0 +1,32 @@
+{
+  "id": "./",
+  "name": "Aula de carta · Estret",
+  "short_name": "Aula de carta",
+  "description": "Simulador docent de carta nàutica amb resolució pas a pas sobre l’Estret de Gibraltar.",
+  "lang": "ca",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f3ed",
+  "theme_color": "#102d36",
+  "icons": [
+    {
+      "src": "./assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "prefer_related_applications": false,
+  "categories": [
+    "education",
+    "utilities"
+  ],
+  "orientation": "any"
+}
