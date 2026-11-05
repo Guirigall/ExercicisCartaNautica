@@ -1,0 +1,13 @@
+PWA · CARTA DE L’ESTRET · v13
+
+CATALÀ
+Publica tots els fitxers en HTTPS, obre index.html amb Chrome a Android i prem «Instal·la a Android». Espera «Disponible fora de línia». El selector 🌐 permet canviar de llengua. Guia completa: README.md. El ZIP no s’instal·la directament; no és un APK. La publicació automàtica encara està pendent per l’error DNS de l’allotjament.
+
+ESPAÑOL
+Publica todos los archivos en HTTPS, abre index.html con Chrome en Android y pulsa «Instala en Android». Espera «Disponible sin conexión». El selector 🌐 cambia el idioma. Guía completa: README.md. El ZIP no se instala directamente; no es un APK. La publicación automática sigue pendiente por el error DNS del alojamiento.
+
+ENGLISH
+Publish all files over HTTPS, open index.html in Chrome on Android and press “Install on Android”. Wait for “Available offline”. Use 🌐 to change language. Full guide: README.md. The ZIP cannot be installed directly; this is not an APK. Automatic publication is still pending because of the hosting DNS error.
+
+FRANÇAIS
+Publiez tous les fichiers en HTTPS, ouvrez index.html dans Chrome sur Android et appuyez sur « Installer sur Android ». Attendez « Disponible hors connexion ». Le sélecteur 🌐 change la langue. Guide complet : README.md. Le ZIP ne s’installe pas directement ; ce n’est pas un APK. La publication automatique reste bloquée par l’erreur DNS de l’hébergement.
