@@ -1,4 +1,4 @@
-const CACHE='aula-estret-v13';
+const CACHE='aula-estret-v14';
 const FILES=['./','./index.html','./style.css','./style.css?v=13','./app.js','./app.js?v=13','./nav.js','./instruments.js','./calculator.js','./solver.js','./i18n.js','./translations.js','./manifest.webmanifest','./manifest.es.webmanifest','./manifest.en.webmanifest','./manifest.fr.webmanifest','./README.md','./assets/carta.jpg','./assets/icon-192.png','./assets/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(FILES);await self.skipWaiting();})()));
 self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith('aula-estret-')&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
