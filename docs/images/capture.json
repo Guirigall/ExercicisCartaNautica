@@ -1,6 +1,6 @@
 {
   "repository": "ExercicisCartaNautica",
-  "sourceCommit": "f5b48a5575de3a4efd30d81321b53ab1e0ef37c1",
+  "sourceCommit": "c30fef475388be9609a883d82b9c89054707cf04",
   "url": "https://guirigall.github.io/ExercicisCartaNautica/",
   "screenshots": [
     {
@@ -22,6 +22,5 @@
       "pageErrors": []
     }
   ],
-  "publishedStatus": null,
-  "publishedError": "Cannot read properties of undefined (reading 'get')"
+  "publishedStatus": 200
 }
