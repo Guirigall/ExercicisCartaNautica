@@ -1,0 +1,27 @@
+{
+  "repository": "ExercicisCartaNautica",
+  "sourceCommit": "f5b48a5575de3a4efd30d81321b53ab1e0ef37c1",
+  "url": "https://guirigall.github.io/ExercicisCartaNautica/",
+  "screenshots": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1050
+      },
+      "title": "Aula de carta · Estret",
+      "pageErrors": []
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": "Aula de carta · Estret",
+      "pageErrors": []
+    }
+  ],
+  "publishedStatus": null,
+  "publishedError": "Cannot read properties of undefined (reading 'get')"
+}
