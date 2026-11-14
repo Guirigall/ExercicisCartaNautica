@@ -1,4 +1,5 @@
 export default {
+  "Segon transportador": {"es": "Segundo transportador", "en": "Second protractor", "fr": "Second rapporteur"},
   "Escriu la coordenada o toca la carta.": {
     "es": "Escribe la coordenada o toca la carta.",
     "en": "Type the coordinate or tap the chart.",
@@ -909,10 +910,10 @@ export default {
     "en": "HTTPS is required to install",
     "fr": "HTTPS requis pour l’installation"
   },
-  "v16 · multilingüe": {
-    "es": "v16 · multilingüe",
-    "en": "v16 · multilingual",
-    "fr": "v16 · multilingue"
+  "v17 · multilingüe": {
+    "es": "v17 · multilingüe",
+    "en": "v17 · multilingual",
+    "fr": "v17 · multilingue"
   },
   "Carregant la carta…": {
     "es": "Cargando la carta…",
