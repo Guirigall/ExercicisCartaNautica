@@ -910,10 +910,10 @@ export default {
     "en": "HTTPS is required to install",
     "fr": "HTTPS requis pour l’installation"
   },
-  "v18 · multilingüe": {
-    "es": "v18 · multilingüe",
-    "en": "v18 · multilingual",
-    "fr": "v18 · multilingue"
+  "v19 · multilingüe": {
+    "es": "v19 · multilingüe",
+    "en": "v19 · multilingual",
+    "fr": "v19 · multilingue"
   },
   "Carregant la carta…": {
     "es": "Cargando la carta…",
