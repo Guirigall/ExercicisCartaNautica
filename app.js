@@ -67,7 +67,7 @@ $('#chartViewport').addEventListener('pointermove',e=>{const p=svgPoint(e.client
 function pointerEnd(e){if(instrumentDrag){moveInstrument(instrumentDrag.name,svgPoint(e.clientX,e.clientY),instrumentDrag);if(arcDraft){if(Math.abs(arcDraft.sweep)>.1){marks.push({...arcDraft});saveLocal(false);}arcDraft=null;drawMarks();}instrumentDrag=null;return;}if(gesture&&!gesture.moved&&pointers.size===1)chartClick(svgPoint(e.clientX,e.clientY));pointers.delete(e.pointerId);gesture=null;if(pointers.size){const p=[...pointers.values()][0];gesture={view:{...view},points:[p],start:p,moved:true};}}
 $('#chartViewport').addEventListener('pointerup',pointerEnd);$('#chartViewport').addEventListener('pointercancel',e=>{pointers.delete(e.pointerId);gesture=null;instrumentDrag=null;arcDraft=null;drawMarks();});$('#chartViewport').addEventListener('wheel',e=>{e.preventDefault();zoom(e.deltaY>0?1.15:1/1.15,svgPoint(e.clientX,e.clientY));},{passive:false});
 // Transportador quadrat de mida fixa respecte de la carta A3 (2600 px ≈ 420 mm → costat ≈ 84 mm).
-const PROTRACTOR_R=260,MAX_PROTRACTORS=2,noProtractor={center:{x:W/2,y:H/2},cordAngle:0,cordLength:null,rotation:0,cordLocked:false};
+const PROTRACTOR_R=130,MAX_PROTRACTORS=2,noProtractor={center:{x:W/2,y:H/2},cordAngle:0,cordLength:null,rotation:0,cordLocked:false};
 function P(){return protractors[activeProtractor]||noProtractor;}
 function newProtractor(){const c={x:view.x+view.w/2,y:view.y+view.h/2};if(protractors.length){const o=protractors[0].center,dx=c.x-o.x,dy=c.y-o.y;if(Math.hypot(dx,dy)<PROTRACTOR_R*2.3){c.x=o.x+PROTRACTOR_R*2.4*(o.x+PROTRACTOR_R*2.6<W?1:-1);c.y=o.y;}}protractors.push({center:c,cordAngle:0,cordLength:null,rotation:0,cordLocked:false});activeProtractor=protractors.length-1;$('#protractorRotation').value='0';}
 function center(){return P().center;}
@@ -75,6 +75,7 @@ function direction(degrees){const c=center(),q=xy(N.forward(geo(c),degrees,1)),d
 function relativeCordAngle(){const c=center(),v=direction(P().cordAngle);return N.norm(screenBearing(c,{x:c.x+v.x,y:c.y+v.y})-P().rotation);}
 function setRelativeCordAngle(degrees){const c=center(),a=N.rad(N.norm(degrees+P().rotation));P().cordAngle=N.inverse(geo(c),geo({x:c.x+Math.sin(a)*100,y:c.y-Math.cos(a)*100})).course;}
 function aimCord(p){const c=center();P().cordLength=Math.hypot(p.x-c.x,p.y-c.y);if(P().cordLength>1){P().cordAngle=N.inverse(geo(c),geo(p)).course;$('#targetAngle').value=relativeCordAngle().toFixed(1);}drawProtractor();updateInstrumentReadout();}
+function crossHandle(parent,p,name,color){const k=chartScale(),s=8/k;el('circle',{cx:p.x,cy:p.y,r:16/k,fill:'transparent','data-handle':name,class:'instrument-handle'},parent);for(const [dx,dy]of [[s,0],[0,s]])el('line',{x1:p.x-dx,y1:p.y-dy,x2:p.x+dx,y2:p.y+dy,stroke:color,'stroke-width':2,'vector-effect':'non-scaling-stroke','pointer-events':'none'},parent);}
 function handle(parent,p,name,color,r=10){el('circle',{cx:p.x,cy:p.y,r:r*2,fill:'transparent','data-handle':name,class:'instrument-handle'},parent);el('circle',{cx:p.x,cy:p.y,r,fill:color,stroke:'white','stroke-width':2,'vector-effect':'non-scaling-stroke','data-handle':name,class:'instrument-handle'},parent);}
 function updateInstrumentReadout(){if(tool==='protractor'){
  const relative=relativeCordAngle();
@@ -89,10 +90,10 @@ function drawOneProtractor(root,i){const c=center(),x=c.x,y=c.y,r=PROTRACTOR_R,m
  const north=el('text',{x,y:y-r*.6,'text-anchor':'middle','font-size':r*.1,fill:'#176b6d'},face);north.textContent='0°';
  const theta=N.rad(P().rotation),rotationHandle={x:x+Math.sin(theta)*r*1.26,y:y-Math.cos(theta)*r*1.26};
  el('line',{x1:x+Math.sin(theta)*r,y1:y-Math.cos(theta)*r,x2:rotationHandle.x,y2:rotationHandle.y,stroke:'#176b6d','stroke-width':2,'vector-effect':'non-scaling-stroke','pointer-events':'none'},g);
- handle(g,rotationHandle,'protractor-rotation:'+i,'#176b6d',r*.045);
+ handle(g,rotationHandle,'protractor-rotation:'+i,'#176b6d',6/chartScale());
  const v=direction(P().cordAngle),length=P().cordLength??r*1.55,end={x:x+v.x*length,y:y+v.y*length};
  el('line',{x1:x,y1:y,x2:end.x,y2:end.y,stroke:'#9b4728','stroke-width':3,'vector-effect':'non-scaling-stroke','stroke-linecap':'round','pointer-events':'none','data-instrument':'cord'},g);
- handle(g,end,'cord:'+i,'#bc6836',r*.035);handle(g,c,'protractor-center:'+i,'#176b6d',r*.045);if(multi){const n=el('text',{x:x-r*.9,y:y-r*.82,'font-size':r*.11,'font-weight':700,fill:i===activeProtractor?'#bc6836':'#176b6d','pointer-events':'none'},g);n.textContent='T'+(i+1);}
+ crossHandle(g,end,'cord:'+i,'#9b4728');crossHandle(g,c,'protractor-center:'+i,'#176b6d');if(multi){const n=el('text',{x:x-r*.9,y:y-r*.82,'font-size':r*.11,'font-weight':700,fill:i===activeProtractor?'#bc6836':'#176b6d','pointer-events':'none'},g);n.textContent='T'+(i+1);}
  const label=el('text',{x:end.x+12,y:end.y-12,class:'ink-label','pointer-events':'none'},g);label.textContent=(multi?'T'+(i+1)+' · ':'')+angle(relativeCordAngle())+(P().cordLocked?' 🔒':'');
 }
 
@@ -141,7 +142,7 @@ $('#install').onclick=async()=>{if(installEvent){await installEvent.prompt();con
 window.addEventListener('appinstalled',()=>{$('#install').hidden=true;installEvent=null;});
 if(window.matchMedia?.('(display-mode: standalone)').matches)$('#install').hidden=true;
 
-if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js?v=16',{updateViaCache:'none'}).then(async reg=>{reg.update().catch(()=>{});const ready=await navigator.serviceWorker.ready;function check(worker){if(worker)worker.postMessage({type:'CHECK_OFFLINE'});}check(navigator.serviceWorker.controller||ready.active);navigator.serviceWorker.addEventListener('controllerchange',()=>check(navigator.serviceWorker.controller));navigator.serviceWorker.addEventListener('message',e=>{if(e.data.type==='OFFLINE_READY')$('#offlineStatus').textContent='● Disponible fora de línia';});}).catch(()=>$('#offlineStatus').textContent='Mode fora de línia no disponible');}else $('#offlineStatus').textContent='Cal HTTPS per instal·lar';
+if('serviceWorker' in navigator){navigator.serviceWorker.register('./sw.js?v=17',{updateViaCache:'none'}).then(async reg=>{reg.update().catch(()=>{});const ready=await navigator.serviceWorker.ready;function check(worker){if(worker)worker.postMessage({type:'CHECK_OFFLINE'});}check(navigator.serviceWorker.controller||ready.active);navigator.serviceWorker.addEventListener('controllerchange',()=>check(navigator.serviceWorker.controller));navigator.serviceWorker.addEventListener('message',e=>{if(e.data.type==='OFFLINE_READY')$('#offlineStatus').textContent='● Disponible fora de línia';});}).catch(()=>$('#offlineStatus').textContent='Mode fora de línia no disponible');}else $('#offlineStatus').textContent='Cal HTTPS per instal·lar';
 
 $('#targetAngle').oninput=()=>{const n=Number($('#targetAngle').value);if($('#targetAngle').value.trim()!==''&&Number.isFinite(n)){setRelativeCordAngle(n);P().cordLocked=true;drawProtractor();updateInstrumentReadout();}};
 $('#releaseCord').onclick=()=>{P().cordLocked=!P().cordLocked;updateInstrumentReadout();};

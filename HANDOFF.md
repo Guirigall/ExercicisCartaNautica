@@ -38,8 +38,8 @@ Llicència MIT.
   Les rectes (`type:'line'`, amb `kind` = course, bearing, alignment, opposition, parallel, latitude, longitude…) es pinten amb `drawStraight()`; els extrems són creuetes petites (`plotCross`).
 - Eines: `setTool(nom)`; clic a la carta → `chartClick()`; eines de dibuix → `drawingClick()`; valors exactes → `applyDrawing()`.
 - Transportadors: array `protractors[]` (màx. `MAX_PROTRACTORS` = 2), actiu `activeProtractor`, accés amb `P()`.
-  Mida fixa respecte de la carta: `PROTRACTOR_R = 260` unitats de carta (meitat del costat, ≈ 42 mm sobre l'A3).
-  Les nanses porten l'índex al nom (`protractor-center:1`, `cord:0`…). No es desen a la sessió.
+  Mida fixa respecte de la carta: `PROTRACTOR_R = 130` unitats de carta (meitat del costat, ≈ 21 mm sobre l'A3; costat ≈ 42 mm).
+  El centre i l'extrem de la corda són creuetes (`crossHandle`, mida constant en pantalla). Les nanses porten l'índex al nom (`protractor-center:1`, `cord:0`…). No es desen a la sessió.
 - Menú lateral plegable: botó `#toggleSidebar`, classe `.workspace.sidebar-hidden`, preferència a `localStorage` (`aula-sidebar-hidden`).
 
 ## Convencions

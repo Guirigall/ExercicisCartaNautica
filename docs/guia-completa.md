@@ -2,7 +2,7 @@
 
 > Guia tècnica detallada / Detailed technical guide. Les ordres referides al projecte font només són aplicables si aquests fitxers hi són; el README descriu els fitxers i les ordres d’aquest repositori.
 
-# Aula de carta · Estret — v17
+# Aula de carta · Estret — v18
 
 [Català](#català) · [Español](#español) · [English](#english) · [Français](#français)
 
@@ -62,7 +62,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 `dist/` conté HTML, CSS, motors de càlcul i regles, instruments, calculadora, traduccions, manifests, service worker, aquest `README.md` i assets. No necessita compilació ni dependències externes. El PDF original no es duplica: es distribueix la imatge derivada (~3,2 MB). No hi ha IA remota ni claus API. El vídeo de referència no es va poder recuperar i no s’afirma reproduir-ne exactament les funcions.
 
-La capçalera mostra **v17**. `npm test` comprova els càlculs, el motor de regles, el formulari, les sessions, els instruments, l’edició, els idiomes i el mode fora de línia. Les proves d’interacció utilitzen un DOM simulat: falta la verificació visual completa en navegador i la instal·lació real a Android.
+La capçalera mostra **v18**. `npm test` comprova els càlculs, el motor de regles, el formulari, les sessions, els instruments, l’edició, els idiomes i el mode fora de línia. Les proves d’interacció utilitzen un DOM simulat: falta la verificació visual completa en navegador i la instal·lació real a Android.
 
 ## Español
 
@@ -120,7 +120,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 `dist/` contiene HTML, CSS, motores de cálculo y reglas, instrumentos, calculadora, traducciones, manifests, service worker, este `README.md` y assets. No necesita compilación ni dependencias externas. No se duplica el PDF original: se distribuye su imagen derivada (~3,2 MB). No hay IA remota ni claves API. No se pudo recuperar el vídeo de referencia y no se afirma reproducir exactamente sus funciones.
 
-La cabecera muestra **v17**. `npm test` comprueba cálculos, motor de reglas, formulario, sesiones, instrumentos, edición, idiomas y modo sin conexión. Las pruebas de interacción usan un DOM simulado: falta la verificación visual completa en navegador y la instalación real en Android.
+La cabecera muestra **v18**. `npm test` comprueba cálculos, motor de reglas, formulario, sesiones, instrumentos, edición, idiomas y modo sin conexión. Las pruebas de interacción usan un DOM simulado: falta la verificación visual completa en navegador y la instalación real en Android.
 
 ## English
 
@@ -178,7 +178,7 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 `dist/` contains HTML, CSS, calculation and rule engines, instruments, calculator, translations, manifests, service worker, this `README.md` and assets. No build or external dependencies are needed. The original PDF is not duplicated: its derived image (~3.2 MB) is distributed. There is no remote AI or API key. The reference video could not be retrieved, and exact reproduction of its features is not claimed.
 
-The header shows **v17**. `npm test` checks calculations, the rule engine, form, sessions, instruments, editing, languages and offline mode. Interaction tests use a simulated DOM: full browser visual verification and actual Android installation remain unverified.
+The header shows **v18**. `npm test` checks calculations, the rule engine, form, sessions, instruments, editing, languages and offline mode. Interaction tests use a simulated DOM: full browser visual verification and actual Android installation remain unverified.
 
 ## Français
 
@@ -236,4 +236,4 @@ python3 -m http.server 8080 --bind 127.0.0.1
 
 `dist/` contient HTML, CSS, moteurs de calcul et de règles, instruments, calculatrice, traductions, manifests, service worker, ce `README.md` et assets. Aucune compilation ni dépendance externe n’est nécessaire. Le PDF original n’est pas dupliqué : seule son image dérivée (~3,2 Mo) est distribuée. Aucune IA distante ni clé API n’est utilisée. La vidéo de référence n’a pas pu être récupérée et aucune reproduction exacte de ses fonctions n’est revendiquée.
 
-L’en-tête affiche **v17**. `npm test` vérifie calculs, moteur de règles, formulaire, sessions, instruments, modification, langues et mode hors connexion. Les tests d’interaction utilisent un DOM simulé : la vérification visuelle complète dans un navigateur et l’installation réelle sur Android restent à effectuer.
+L’en-tête affiche **v18**. `npm test` vérifie calculs, moteur de règles, formulaire, sessions, instruments, modification, langues et mode hors connexion. Les tests d’interaction utilisent un DOM simulé : la vérification visuelle complète dans un navigateur et l’installation réelle sur Android restent à effectuer.
