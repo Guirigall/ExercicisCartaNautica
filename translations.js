@@ -1,4 +1,29 @@
 export default {
+  "Escriu la coordenada o toca la carta.": {
+    "es": "Escribe la coordenada o toca la carta.",
+    "en": "Type the coordinate or tap the chart.",
+    "fr": "Saisissez la coordonnée ou touchez la carte."
+  },
+  "queda fora de la carta.": {
+    "es": "queda fuera de la carta.",
+    "en": "is outside the chart.",
+    "fr": "est hors de la carte."
+  },
+  "La longitud ": {"es": "La longitud ", "en": "Longitude ", "fr": "La longitude "},
+  "La latitud ": {"es": "La latitud ", "en": "Latitude ", "fr": "La latitude "},
+  "Paral·lel ": {"es": "Paralelo ", "en": "Parallel ", "fr": "Parallèle "},
+  "Meridià ": {"es": "Meridiano ", "en": "Meridian ", "fr": "Méridien "},
+  " traçat.": {"es": " trazado.", "en": " drawn.", "fr": " tracé."},
+  "Amaga el menú": {
+    "es": "Oculta el menú",
+    "en": "Hide menu",
+    "fr": "Masquer le menu"
+  },
+  "Mostra el menú": {
+    "es": "Muestra el menú",
+    "en": "Show menu",
+    "fr": "Afficher le menu"
+  },
   "AULA DE CARTA": {
     "es": "AULA DE CARTA",
     "en": "CHART WORKSHOP",
@@ -884,10 +909,10 @@ export default {
     "en": "HTTPS is required to install",
     "fr": "HTTPS requis pour l’installation"
   },
-  "v13 · multilingüe": {
-    "es": "v13 · multilingüe",
-    "en": "v13 · multilingual",
-    "fr": "v13 · multilingue"
+  "v15 · multilingüe": {
+    "es": "v15 · multilingüe",
+    "en": "v15 · multilingual",
+    "fr": "v15 · multilingue"
   },
   "Carregant la carta…": {
     "es": "Cargando la carta…",
